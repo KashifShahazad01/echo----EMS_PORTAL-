@@ -5,13 +5,13 @@ const LoginForm = () => {
     <div className="login-content">
       <form action="index.html">
         <img src={avatar} alt="avatar" />
-        <h2 className="title">EMS</h2>
+        <h2 className="title">Ems</h2>
 
         {/* Use InputField component for username */}
-        <InputField label="Username" type="text" />
+        <InputField label="Username" type="text" pass="user" />
 
         {/* Use InputField component for password */}
-        <InputField label="Password" type="password" />
+        <InputField label="Password" type="password" pass="pass" />
 
         <a href="#">Forgot Password?</a>
         <input type="submit" className="btn" value="Login" />

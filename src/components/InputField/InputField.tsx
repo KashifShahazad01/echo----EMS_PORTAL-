@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 interface InputFieldProps {
   label: string;
   type: string;
+  pass: "pass" | "user";
 }
-const InputField = ({ label, type }: InputFieldProps) => {
+const InputField = ({ label, type, pass }: InputFieldProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
@@ -18,9 +19,8 @@ const InputField = ({ label, type }: InputFieldProps) => {
       setIsFocused(false);
     }
   };
-
   return (
-    <div className={`input-div ${isFocused ? "focus" : ""}`}>
+    <div className={`input-div input-div__${pass} ${isFocused ? "focus" : ""}`}>
       <div className="i">
         <FontAwesomeIcon icon={type === "password" ? "lock" : "user"} />
       </div>
@@ -28,7 +28,7 @@ const InputField = ({ label, type }: InputFieldProps) => {
         <h5>{label}</h5>
         <input
           type={type}
-          className="input"
+          className="input "
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
