@@ -14,8 +14,8 @@ const InputField = ({ label, type, pass }: InputFieldProps) => {
     setIsFocused(true);
   };
 
-  const handleBlur = () => {
-    {
+  const handleBlur = (e) => {
+    if (e.target.value === "") {
       setIsFocused(false);
     }
   };
