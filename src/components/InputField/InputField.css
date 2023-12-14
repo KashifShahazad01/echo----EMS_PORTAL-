@@ -1,0 +1,88 @@
+.input-div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 93%;
+  margin: 0rem 0 2rem 0;
+  padding: 1.5rem 0 0.5rem;
+  border-bottom: 3px solid #d9d9d9;
+}
+.input-div__user {
+  margin: 0rem 0 3.5rem 0;
+}
+.input-div__pass {
+  margin: 0rem 0 1.5rem 0 !important;
+}
+
+.i {
+  color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.i i {
+  transition: 0.3s;
+}
+
+.input-div > div {
+  position: relative;
+  height: 5.1rem;
+}
+
+.input-div > div > h5 {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 2.5rem;
+  transition: 0.3s;
+}
+
+.input-div:before,
+.input-div:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 3px;
+  background-color: #38d39f;
+  transition: 0.4s;
+}
+
+.input-div:before {
+  right: 50%;
+}
+
+.input-div:after {
+  left: 50%;
+}
+
+.input-div.focus:before,
+.input-div.focus:after {
+  width: 50%;
+}
+
+.input-div.focus > div > h5 {
+  top: -5px;
+  font-size: 2rem;
+}
+
+.input-div.focus > .i > i {
+  color: #38d39f;
+}
+
+.input-div > div > input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.9rem 1.1rem 0.5rem 1.1rem;
+  font-size: 2.5rem;
+  color: #555;
+  font-family: "poppins", sans-serif;
+}

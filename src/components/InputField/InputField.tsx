@@ -1,20 +1,29 @@
-// InputField.jsx
+import "./InputField.css";
+import { FaUser, FaLock } from "react-icons/fa";
 
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 interface InputFieldProps {
   label: string;
   type: string;
   pass: "pass" | "user";
+  value: string;
+  inputValue: (e: string) => void;
 }
-const InputField = ({ label, type, pass }: InputFieldProps) => {
+const InputField = ({
+  label,
+  type,
+  pass,
+  value,
+  inputValue,
+}: InputFieldProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
     setIsFocused(true);
   };
 
-  const handleBlur = (e) => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     if (e.target.value === "") {
       setIsFocused(false);
     }
@@ -22,7 +31,19 @@ const InputField = ({ label, type, pass }: InputFieldProps) => {
   return (
     <div className={`input-div input-div__${pass} ${isFocused ? "focus" : ""}`}>
       <div className="i">
-        <FontAwesomeIcon icon={type === "password" ? "lock" : "user"} />
+        {type === "password" ? (
+          <FaLock
+            size="25"
+            color={isFocused ? "#38d39f" : ""}
+            className="icon"
+          />
+        ) : (
+          <FaUser
+            size="25"
+            color={isFocused ? "#38d39f" : ""}
+            className="icon"
+          />
+        )}
       </div>
       <div className="div">
         <h5>{label}</h5>
@@ -31,6 +52,8 @@ const InputField = ({ label, type, pass }: InputFieldProps) => {
           className="input "
           onFocus={handleFocus}
           onBlur={handleBlur}
+          value={value}
+          onChange={(e) => inputValue(e.target.value)}
         />
       </div>
     </div>

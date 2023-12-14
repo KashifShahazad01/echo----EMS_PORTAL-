@@ -1,0 +1,53 @@
+{
+  "schools": [
+    {
+      "name": "Professor",
+      "address": "new road",
+      "username": "pgs",
+      "password": "pgs",
+      "id": 6
+    },
+    {
+      "name": "pgc",
+      "address": "no",
+      "username": "pgc",
+      "password": "pgc",
+      "id": 8
+    },
+    {
+      "name": "Scholar",
+      "address": "no",
+      "username": "sch",
+      "password": "sch",
+      "id": 9
+    }
+  ],
+  "classes": [
+    {
+      "schoolId": 8,
+      "name": "PGCA",
+      "id": 1
+    },
+    {
+      "schoolId": 6,
+      "name": "PGSA",
+      "id": 3
+    },
+    {
+      "schoolId": 6,
+      "name": "PGSB",
+      "id": 4
+    },
+    {
+      "schoolId": 9,
+      "name": "ScholarA",
+      "id": 5
+    },
+    {
+      "schoolId": 8,
+      "name": "Kashif",
+      "id": 6
+    }
+  ],
+  "students": []
+}
